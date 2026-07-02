@@ -1,5 +1,6 @@
 package dev.Pedro.CadastroDeTarefas.tarefas;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,5 +22,6 @@ public class TarefasModel {
     private String dificuldade;
     // um para muitos
     @OneToMany(mappedBy = "tarefas")
+    @JsonIgnore
     private List<FuncionarioModel> funcionario;
 }

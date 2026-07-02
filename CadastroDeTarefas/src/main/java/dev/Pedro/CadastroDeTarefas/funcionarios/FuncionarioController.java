@@ -1,10 +1,15 @@
 package dev.Pedro.CadastroDeTarefas.funcionarios;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/funcionario")
 public class FuncionarioController {
+    @Autowired
+    private FuncionarioService funcionarioService;
     @GetMapping("/boasvindas")
     public String BoasVindas(){
         return "essa é a primeiras rota";}
@@ -14,10 +19,11 @@ public class FuncionarioController {
             return "funcionario criado";
         }
 
+
         //procurar funcionario(read)
-        @GetMapping("/todos")
-        public String mostrarTodosFunc(){
-            return "mostra funciorio";
+        @GetMapping("/listar")
+        public List<FuncionarioModel> mostrarTodosFunc(){
+            return funcionarioService.listarFuncionario();
         }
 
         //mostrar funciorio por id (read)
