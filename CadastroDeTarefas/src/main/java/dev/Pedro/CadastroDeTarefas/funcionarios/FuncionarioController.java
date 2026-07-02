@@ -3,7 +3,7 @@ package dev.Pedro.CadastroDeTarefas.funcionarios;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/funcionario")
 public class FuncionarioController {
     @GetMapping("/boasvindas")
     public String BoasVindas(){

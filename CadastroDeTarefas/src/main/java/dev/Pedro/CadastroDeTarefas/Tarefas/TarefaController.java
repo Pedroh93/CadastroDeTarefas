@@ -3,7 +3,7 @@ package Tarefas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("missoes")
+@RequestMapping("/tarefa")
 public class TarefaController {
     // get - mandar um requisão para alterar
     @GetMapping ("/listar")
