@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FuncionarioService {
@@ -13,5 +14,12 @@ public class FuncionarioService {
 
     public List<FuncionarioModel> listarFuncionario(){
         return funcionarioRepository.findAll();
+    }
+
+    public Optional<FuncionarioModel> mostrarTodosFuncPorid(long id){
+        return funcionarioRepository.findById(id);
+    }
+    public FuncionarioModel criarFuncionario(FuncionarioModel funcionario){
+        return funcionarioRepository.save(funcionario);
     }
 }
