@@ -19,7 +19,13 @@ public class FuncionarioService {
     public Optional<FuncionarioModel> mostrarTodosFuncPorid(long id){
         return funcionarioRepository.findById(id);
     }
+
     public FuncionarioModel criarFuncionario(FuncionarioModel funcionario){
         return funcionarioRepository.save(funcionario);
+    }
+
+    // deletar funcionario
+    public void deletarPorID(long id){
+        funcionarioRepository.deleteById(id);
     }
 }
