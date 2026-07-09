@@ -2,7 +2,8 @@ package dev.Pedro.CadastroDeTarefas.funcionarios;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioRepository;
+import dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel;
 import java.util.List;
 import java.util.Optional;
 

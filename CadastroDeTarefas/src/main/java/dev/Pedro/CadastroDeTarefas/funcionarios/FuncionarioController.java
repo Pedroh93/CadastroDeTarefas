@@ -10,7 +10,7 @@ import java.util.Optional;
 @RequestMapping("/funcionario")
 public class FuncionarioController {
     @Autowired
-    private FuncionarioService funcionarioService;
+    private dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioService funcionarioService;
 
     @GetMapping("/boasvindas")
     public String BoasVindas(){
@@ -19,26 +19,26 @@ public class FuncionarioController {
 
     //add funcionario (create)
     @PostMapping("/criar")
-    public FuncionarioModel criarFunc(@RequestBody FuncionarioModel funcionario){
+    public dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel criarFunc(@RequestBody dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel funcionario){
         return funcionarioService.criarFuncionario(funcionario); // minúsculo = usa a instância
     }
 
     //procurar funcionario(read)
     @GetMapping("/listar")
-    public List<FuncionarioModel> mostrarTodosFunc(){
+    public List<dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel> mostrarTodosFunc(){
         return funcionarioService.listarFuncionario();
     }
 
     //mostrar funciorio por id (read)
     @GetMapping("/todosId")
-    public FuncionarioModel mostrarTodosFuncPorid(@RequestParam long id){
-        Optional<FuncionarioModel> funcionarioPorId = funcionarioService.mostrarTodosFuncPorid(id);
+    public dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel mostrarTodosFuncPorid(@RequestParam long id){
+        Optional<dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel> funcionarioPorId = funcionarioService.mostrarTodosFuncPorid(id);
         return funcionarioPorId.orElse(null);
     }
 
     //alterar dados(update)
     @PutMapping("/alterar/{id}")
-    public FuncionarioModel alterPorId(@PathVariable Long id, @RequestBody FuncionarioModel funcionarioAtualizado){
+    public dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel alterPorId(@PathVariable Long id, @RequestBody dev.Pedro.CadastroDeTarefas.funcionarios.FuncionarioModel funcionarioAtualizado){
         return funcionarioService.atualizarFuncionario(id, funcionarioAtualizado);
     }
 
